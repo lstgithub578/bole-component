@@ -234,7 +234,7 @@ function handleClose() {
         >
       </div>
     </template>
-    <div class="bo-dialog-body" :style="{ height: state.height }">
+    <div class="bo-dialog__body" :style="{ height: state.height }">
       <el-scrollbar>
         <slot :scopedData="state.scopedData"> </slot>
       </el-scrollbar>

@@ -1,7 +1,7 @@
 @use 'mixins/mixins' as *;
 
 @include b(filter) {
-  @include b(filter-btns) {
+  @include b(filter__btns) {
     display: flex;
     margin-left: 12px;
   }

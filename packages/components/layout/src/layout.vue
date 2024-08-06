@@ -88,7 +88,7 @@ function treeCheckChange() {
         <slot name="header"> </slot>
       </div>
     </el-collapse-transition>
-    <div class="bo-layout-toolbar">
+    <div class="bo-layout__toolbar">
       <div>
         <el-tooltip content="刷新" placement="top" v-if="!hideToolbarBtnsSet.has('refresh')">
           <el-button :icon="Refresh" type="info" @click="emits('refresh')"></el-button>
@@ -98,10 +98,10 @@ function treeCheckChange() {
       <div>
         <slot name="toolbar-rigth-btn"></slot>
         <el-tooltip content="表格大小" placement="top" v-if="!hideToolbarBtnsSet.has('size')">
-          <el-dropdown @command="size = $event" class="bo-layout-toolbar-btn">
+          <el-dropdown @command="size = $event" class="bo-layout__toolbar-btn">
             <el-button :icon="Grid"></el-button>
             <template #dropdown>
-              <div class="bo-layout-toolbar-size">
+              <div class="bo-layout__toolbar-size">
                 <div>
                   <el-button
                     :type="size === 'large' ? 'primary' : 'default'"
@@ -139,7 +139,7 @@ function treeCheckChange() {
           v-if="!hideToolbarBtnsSet.has('colToggle')"
         >
           <template #reference>
-            <el-button class="bo-layout-toolbar-btn">
+            <el-button class="bo-layout__toolbar-btn">
               <template #icon>
                 <el-icon>
                   <svg
@@ -180,7 +180,7 @@ function treeCheckChange() {
         >
           <el-button
             :icon="Search"
-            class="bo-layout-toolbar-btn"
+            class="bo-layout__toolbar-btn"
             :type="showHeader ? 'primary' : 'default'"
             @click="showHeader = !showHeader"
           ></el-button>

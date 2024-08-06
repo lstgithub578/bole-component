@@ -68,7 +68,7 @@ function getFormItemLabel(item: FormComponentOption) {
             :label-width="item.label === '' ? '0px' : ''"
             v-bind="item.formItemProps"
           >
-            <div class="bo-form-item-component-wrap" :style="item.warpCss || {}">
+            <div class="bo-form-item__component-wrap" :style="item.warpCss || {}">
               <component
                 :is="
                   item.prepend

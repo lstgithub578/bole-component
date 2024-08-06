@@ -57,7 +57,7 @@ function resetClick() {
     :formProps="{ ...props.formProps }"
     :model="props.model"
   >
-    <el-col :span="null as any" class="bo-filter-btns">
+    <el-col :span="null as any" class="bo-filter__btns">
       <el-button :icon="Search" v-if="props.showSearchBtn" type="primary" @click="searchBtnClick">
         {{ props.searchBtnText }}
       </el-button>

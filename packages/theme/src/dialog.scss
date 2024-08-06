@@ -1,7 +1,7 @@
 @use 'mixins/mixins' as *;
 
 @include b(dialog) {
-  @include b(dialog-body) {
+  @include b(dialog__body) {
     width: 100%;
   }
 }

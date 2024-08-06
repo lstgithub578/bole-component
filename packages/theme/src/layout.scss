@@ -3,19 +3,19 @@
 @include b(layout) {
   width: 100%;
 
-  @include b(layout-toolbar) {
+  @include b(layout__toolbar) {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
 
-    @include b(layout-toolbar-size) {
+    @include b(layout__toolbar-size) {
       display: flex;
       flex-direction: column;
     }
   }
 }
 
-@include b(layout-toolbar-btn) {
+@include b(layout__toolbar-btn) {
   & + & {
     margin-left: 8px;
   }
