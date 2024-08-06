@@ -24,7 +24,7 @@ const config: UserConfig = {
     footer: {
       message: 'MIT Licensed.'
     },
-    socialLinks: [{ icon: 'github', link: 'https://lstgithub578.github.io/bole-component' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/lstgithub578/bole-component' }]
     // },
 
     // },
