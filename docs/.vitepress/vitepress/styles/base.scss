@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.VPContent .VPDoc.has-aside .content-container {
+  max-width: 900px;
+}
+
+/**
+ * Table
+ * -------------------------------------------------------------------------- */
+
+.content-container .vp-doc .vp-table:not(.el-table)  {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  margin-bottom: 45px;
+
+  & > table {
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: var(--bg-color);
+    font-size: 14px;
+    line-height: 1.5em;
+    table-layout: auto;
+    margin: 10px 0;
+
+    th,
+    td {
+      // white-space: nowrap;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      border-left: none;
+      border-right: none;
+      padding: 0.6em 1em;
+      text-align: left;
+      max-width: 250px;
+      white-space: pre-wrap;
+    }
+
+    thead tr:first-child th {
+      border-top: none;
+    }
+  }
+}

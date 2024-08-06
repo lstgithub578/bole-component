@@ -1,0 +1,12 @@
+{
+  "zh": {
+    "install": {
+      "text": "安装",
+      "link": "/install"
+    },
+    "quickStart": {
+      "text": "快速开始",
+      "link": "/quick-start"
+    }
+  }
+}

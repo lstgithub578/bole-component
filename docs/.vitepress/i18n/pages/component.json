@@ -1,0 +1,42 @@
+{
+  "zh": {
+    "form": {
+      "text": "表单组件",
+      "children": [
+        {
+          "link": "/form",
+          "text": "Form 表单"
+        },
+        {
+          "link": "/dialog-form",
+          "text": "弹窗表单"
+        },
+        {
+          "link": "/form-global-setting",
+          "text": "表单全局配置"
+        }
+      ]
+    },
+    "dialog": {
+      "text": "对话框组件",
+      "children": [
+        {
+          "link": "/dialog",
+          "text": "Dialog 对话框"
+        }
+      ]
+    },
+    "table": {
+      "text": "表格组件 Table",
+      "link": "/table"
+    },
+    "filter": {
+      "text": "搜索组件 Filter",
+      "link": "/filter"
+    },
+    "layout": {
+      "text": "布局组件 Layout",
+      "link": "/layout"
+    }
+  }
+}

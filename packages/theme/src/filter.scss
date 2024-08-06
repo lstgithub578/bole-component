@@ -1,0 +1,16 @@
+@use 'mixins/mixins' as *;
+
+@include b(filter) {
+  @include b(filter-btns) {
+    display: flex;
+    margin-left: 12px;
+  }
+
+  .el-input {
+    --el-input-width: 200px;
+  }
+
+  .el-select {
+    --el-select-width: 200px;
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev . --port 8751",
+    "build": "vitepress build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "luct",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "postcss": "^8.4.38",
+    "sass": "^1.66.1",
+    "vitepress": "1.2.3"
+  },
+  "dependencies": {
+    "escape-html": "^1.0.3",
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0",
+    "prism-theme-vars": "^0.2.4",
+    "prismjs": "^1.29.0"
+  }
+}

@@ -1,0 +1,8 @@
+@use 'mixins/mixins' as *;
+
+@include b(form) {
+  &-item-component-wrap {
+    display: flex;
+    width: 100%;
+  }
+}

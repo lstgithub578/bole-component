@@ -1,0 +1,12 @@
+//  fork from element-plus  and rewrite
+
+@use './config' as *;
+
+// BEM
+@mixin b($block) {
+  $B: $bo-namespace + $bo-common-separator + $block !global;
+
+  .#{$B} {
+    @content;
+  }
+}

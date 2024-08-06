@@ -1,0 +1,58 @@
+{
+  "name": "bole-component",
+  "version": "1.0.22",
+  "description": "Element Plus Enhanced Components",
+  "keywords": [
+    "vue",
+    "vue3",
+    "element-plus",
+    "component"
+  ],
+  "author": "luct",
+  "main": "./dist/lib/index.js",
+  "module": "./dist/es/index.mjs",
+  "types": "./dist/es/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/es/index.mjs",
+      "require": "./dist/lib/index.js",
+      "types": "./dist/es/index.d.ts"
+    },
+    "./global": {
+      "types": "./global.d.ts"
+    },
+    "./es": {
+      "types": "./dist/es/index.d.ts",
+      "import": "./dist/es/index.mjs"
+    },
+    "./lib": {
+      "types": "./dist/lib/index.d.ts",
+      "require": "./dist/lib/index.js"
+    },
+    "./*": "./*"
+  },
+  "style": "./dist/index.css",
+  "unpkg": "./dist/index.js",
+  "jsdelivr": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lstgithub578/bole-component"
+  },
+  "homepage": "https://lstgithub578.github.io/bole-component",
+  "peerDependencies": {
+    "vue": "^3.4.33",
+    "element-plus": "^2.7.2"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1"
+  },
+  "devDependencies": {
+    "unplugin-vue-components": "^0.27.3",
+    "vue": "^3.4.33",
+    "element-plus": "^2.7.2"
+  },
+  "license": "MIT"
+}

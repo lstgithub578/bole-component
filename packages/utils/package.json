@@ -1,0 +1,6 @@
+{
+  "name": "@bole-component/utils",
+  "private": true,
+  "license": "MIT",
+  "main": "index.ts"
+}

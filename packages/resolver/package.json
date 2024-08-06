@@ -1,0 +1,15 @@
+{
+  "name": "@bole-component/resolver",
+  "version": "1.0.0",
+  "description": "bole-components resolver of unplugin-vue-components",
+  "main": "./src/index.ts",
+  "types": "./src/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luct",
+  "license": "MIT",
+  "devDependencies": {
+    "unplugin-vue-components": "^0.27.3"
+  }
+}
