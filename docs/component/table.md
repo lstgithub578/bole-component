@@ -58,7 +58,12 @@ table/show
 
 ## 操作列
 
-可以使用`action`prop在末尾添加“操作”列，列的标题默认为“操作”；`action`推荐在[`TableColums`]抽离在另一个文件时使用
+可以使用`action`prop在末尾添加“操作”列，列的标题默认为“操作”；`action`可以在[`TableColums`]抽离在另一个文件时使用
+
+::: warning
+推荐使用插槽
+:::
+
 ::: demo
 table/action
 :::
@@ -69,17 +74,17 @@ table/action
 除了下面的Attributes，您还可以传入`el-table`的原生props和事件，例如`show-header`、`selection-change`等，更多Attributes请看[el-table文档](https://element-plus.org/zh-CN/component/table.html#table-%E5%B1%9E%E6%80%A7)
 :::
 
-| 名称   | 说明     | 类型    | 默认值 |
-| ------ | -------- | ------- | ------ |
-| `data` | 表格数据 | `array` | []     |
-| `options` | 表格配置项 | [`TableColums`](#tablecolums) |   |
-|`hiddenColsByLabel`|根据标题隐藏列|`array`|[]|
-|`action`|操作列|`object`: `{label?: String} & Omit<TableColumn, "children" \| "slot">`|[]|
-
+| 名称                | 说明           | 类型                                                                   | 默认值 |
+| ------------------- | -------------- | ---------------------------------------------------------------------- | ------ |
+| `data`              | 表格数据       | `array`                                                                | []     |
+| `options`           | 表格配置项     | [`TableColums`](#tablecolums)                                          |        |
+| `hiddenColsByLabel` | 根据标题隐藏列 | `array`                                                                | []     |
+| `action`            | 操作列         | `object`: `{label?: String} & Omit<TableColumn, "children" \| "slot">` | []     |
 
 ### TableColums
+
 TableColums由`TableArrayColumns`和`TableObjectColumns`，都是由 `TableColum` 组成，其中`TableObjectColumns`对象上的value可以是字符串
-| 名称 | 说明    | 类型 | 是否必须 | 默认值 |
+| 名称 | 说明 | 类型 | 是否必须 | 默认值 |
 | ---- | ------- | ----| ---- | ---- |
 |`label`|列的标题,优先级比props的label低|`string`|否||
 |`prop`|列内容的字段名,优先级比props的prop低|`string`|否||
@@ -90,8 +95,9 @@ TableColums由`TableArrayColumns`和`TableObjectColumns`，都是由 `TableColum
 |`slot`|插槽名称|`string`|否||
 
 #### ButtonOption
-| 名称 | 说明    | 类型 | 是否必须 | 默认值 |
-| ---- | ------- | ----| ---- | ---- |
-|`label`|按钮的文字|`string`|否||
-|`props`|`el-button`的props|`((scope: {row: any,  column: any, $index:number}) => Partial<ButtonProps>) \| Partial<ButtonProps>`|否||
-|`click`|点击按钮的事件|`Function`|否||
+
+| 名称    | 说明               | 类型                                                                                                 | 是否必须 | 默认值 |
+| ------- | ------------------ | ---------------------------------------------------------------------------------------------------- | -------- | ------ |
+| `label` | 按钮的文字         | `string`                                                                                             | 否       |        |
+| `props` | `el-button`的props | `((scope: {row: any,  column: any, $index:number}) => Partial<ButtonProps>) \| Partial<ButtonProps>` | 否       |        |
+| `click` | 点击按钮的事件     | `Function`                                                                                           | 否       |        |

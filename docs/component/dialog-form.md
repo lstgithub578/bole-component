@@ -17,7 +17,7 @@ dialog-form/basic
 
 ## 不验证表单
 
-只需将`validateForm`设置成`false`点击“确定”按钮时不验证表单 
+只需将`validateForm`设置成`false`点击“确定”按钮时不验证表单
 
 ::: demo
 dialog-form/no-validate
@@ -25,12 +25,11 @@ dialog-form/no-validate
 
 ## 设置表单的数据
 
-使用`setFormData`可以设置表单的数据；
+使用`setFormData`可以设置表单的数据；可以根据自己的需求解析`setFormData`的返回值，详情请看[`表单数据解析`](./dialog-global-setting.md#表单数据解析)
 
 ::: demo
 dialog-form/set-form-data
 :::
-
 
 ## 联动数据的处理
 

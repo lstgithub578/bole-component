@@ -23,6 +23,10 @@
         {
           "link": "/dialog",
           "text": "Dialog 对话框"
+        },
+        {
+          "link": "/dialog-global-setting",
+          "text": "对话框全局配置"
         }
       ]
     },

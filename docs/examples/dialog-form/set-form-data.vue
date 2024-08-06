@@ -65,7 +65,7 @@ function getById(): any {
 function open(id?: number) {
   dialog.value?.open({
     title: '表单',
-    setFormData: id ? getById() : null,
+    setFormData: id ? () => getById() : null,
     confirm({ data, close, loading, stopLoading }) {
       console.log('data', data)
       loading()

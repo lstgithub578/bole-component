@@ -11,7 +11,7 @@ lang: zh
 
 首先导入`setFormConfig`, 然后可以根据[`全局配置选项`](#全局配置选项)定义表单的公共配置，下面是一个简单的例子
 
-::: warning
+::: tip
 注意需要在`main.ts/js`中导入配置
 :::
 
@@ -68,18 +68,17 @@ setFormConfig({
     // 使用execAsyncDataFunc时传入的参数
     ...args: any[]
   ) => {
+    /**
+     * 默认解析器适用的数据结构，
+     * {
+     *  如果存在data属性，优先拿data属性的数据
+     *  data: []
+     * }
+     */
+
+    // 需要返回promise
     return new Promise((resolve, reject) => {
       func(formInstance, ...args).then((res: any) => {
-
-        /**
-         * 默认解析器适用的 res 参数结构，
-         * {
-         *  code: 200,
-         *  data: []
-         * }
-         */
-
-        // 如果存在data属性，优先拿data属性的数据,如果res
         resolve(res?.data || res)
       })
     })
