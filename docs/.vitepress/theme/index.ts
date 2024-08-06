@@ -9,6 +9,7 @@ import { globals } from '../vitepress'
 import Theme from 'vitepress/dist/client/theme-default/index.js'
 
 export default define<ThemeType>({
+  base: '/bole-component/',
   ...Theme,
   enhanceApp: ({ app }) => {
     Object.keys(Bole).forEach((key) => {
