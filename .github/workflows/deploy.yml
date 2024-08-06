@@ -45,6 +45,8 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: pnpm install # 或 pnpm install / yarn install / bun install
+      - name: Build BoleComponent
+        run: pnpm run build
       - name: Build with VitePress
         run: pnpm run docs:build # 或 npm docs:build / yarn docs:build / bun run docs:build
       - name: Upload artifact
