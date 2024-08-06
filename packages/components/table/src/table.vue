@@ -47,7 +47,7 @@ const options = computed<TableArrayColumns>((): TableArrayColumns => {
 
   if (props.action) {
     let action = { ...props.action }
-    if (!action || !action.props?.label) action.label = '操作'
+    if (!action.label || !action.props?.label) action.label = '操作'
     columns.push(action)
   }
 
