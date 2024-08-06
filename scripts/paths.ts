@@ -1,6 +1,9 @@
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 const resolve = path.resolve
+
+const __dirname = path.dirname(fileURLToPath(new URL(import.meta.url)))
 
 export const projRoot = resolve(__dirname, '../')
 

@@ -1,6 +1,5 @@
 import enquirer from 'enquirer'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import fs from 'node:fs'
 // @ts-ignore
 import semver from 'semver'
@@ -8,11 +7,9 @@ import { execSync } from 'node:child_process'
 import chalk from 'chalk'
 import { exit } from 'node:process'
 
-const __fileurl = fileURLToPath(import.meta.url)
-// 根目录
-const rootDir = path.resolve(__fileurl, '../../')
-const projectRoot = path.resolve(rootDir, './packages/boleComponent')
-const packageJsonPath = path.resolve(projectRoot, './package.json')
+import { boleComponentRoot } from './paths'
+
+const packageJsonPath = path.resolve(boleComponentRoot, './package.json')
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'))
 const currentVersion = packageJson.version
 const versionsTypes = ['patch', 'minor', 'major']
@@ -62,11 +59,16 @@ async function main() {
   packageJson.version = version
   fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2) + '\n')
 
-  execSync('git add -A', { stdio: 'inherit' })
+  execSync('pnpm run changelog', { stdio: 'inherit' })
 
+  execSync('git add -A', { stdio: 'inherit' })
   execSync(`git commit -m "release v${version}"`, { stdio: 'inherit' })
   execSync(`git tag -a v${version} -m "v${version}"`, { stdio: 'inherit' })
-  execSync('npm publish --registry=http://localhost:4873/', { cwd: projectRoot, stdio: 'inherit' })
+
+  execSync('npm publish', {
+    cwd: boleComponentRoot,
+    stdio: 'inherit'
+  })
 
   console.log(chalk.green(`Successfully published v${version}`))
 }
