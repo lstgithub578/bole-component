@@ -1,6 +1,6 @@
 {
   "name": "bole-component",
-  "version": "1.0.22",
+  "version": "1.0.0",
   "description": "Element Plus Enhanced Components",
   "keywords": [
     "vue",
@@ -42,6 +42,9 @@
     "url": "git+https://github.com/lstgithub578/bole-component"
   },
   "homepage": "https://lstgithub578.github.io/bole-component",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "peerDependencies": {
     "vue": "^3.4.33",
     "element-plus": "^2.7.2"

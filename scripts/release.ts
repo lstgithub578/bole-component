@@ -62,7 +62,7 @@ async function main() {
   execSync('pnpm run changelog', { stdio: 'inherit' })
 
   execSync('git add -A', { stdio: 'inherit' })
-  execSync(`git commit -m "release v${version}"`, { stdio: 'inherit' })
+  execSync(`git commit -m "release: v${version}"`, { stdio: 'inherit' })
   execSync(`git tag -a v${version} -m "v${version}"`, { stdio: 'inherit' })
 
   execSync('npm publish', {
