@@ -4,6 +4,7 @@ import { nav } from './config/nav'
 import sidebars from './config/sidebar'
 
 const config: UserConfig = {
+  base: '/bole-component/',
   markdown: {
     config: (md) => mdPlugin(md)
   },
