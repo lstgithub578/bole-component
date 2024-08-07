@@ -9,12 +9,15 @@ import {
   ISelectProps,
   RadioProps,
   DatePickerProps,
-  CascaderProps,
+  // 非Cascader的props，是cascader-panel的props
+  // CascaderProps,
+  cascaderProps,
   CheckboxProps,
   CheckboxGroupProps,
   RadioGroupProps,
   SwitchProps,
-  type FormRules
+  type FormRules,
+  CascaderConfig
 } from 'element-plus'
 import { VNode, PropType, ExtractPropTypes, CSSProperties, MaybeRef } from 'vue'
 
@@ -115,10 +118,12 @@ export interface DateOption extends FormComponentOption {
   props?: DefineProps<DatePickerProps>
 }
 
+export type ElCascaderProps = ExtractPropTypes<typeof cascaderProps>
+
 // 级联选择器组件配置
 export interface CascaderOption extends FormNotDataComponentOption {
   type: 'cascader'
-  props?: DefineProps<CascaderProps>
+  props?: DefineProps<ElCascaderProps>
   data?: FormComponentOption['data']
   asyncData?: FormComponentOption['asyncData']
 }
