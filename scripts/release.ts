@@ -59,11 +59,13 @@ async function main() {
   packageJson.version = version
   fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2) + '\n')
 
+  execSync(`git tag -a v${version} -m "v${version}"`, { stdio: 'inherit' })
   execSync('pnpm run changelog', { stdio: 'inherit' })
 
   execSync('git add -A', { stdio: 'inherit' })
   execSync(`git commit -m "release: v${version}"`, { stdio: 'inherit' })
-  execSync(`git tag -a v${version} -m "v${version}"`, { stdio: 'inherit' })
+
+  execSync(`git push --tag`, { stdio: 'inherit' })
 
   execSync('npm publish', {
     cwd: boleComponentRoot,

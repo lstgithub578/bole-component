@@ -13,7 +13,7 @@ const Configuration: UserConfig = {
         'fix', // 修复 bug
         'feat', // 新功能 feature
         'perf', // 优化相关，比如提升性能、体验
-        'refactor',
+        'refactor', //重构代码
         'revert', // 回滚到上一个版本
         'release', // 发布
         'revert', // 回滚到上一个版本
