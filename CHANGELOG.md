@@ -1,4 +1,17 @@
-#  (2024-08-06)
+# [](https://github.com/lstgithub578/bole-component/compare/v1.0.1...v) (2024-08-09)
+
+
+
+## [1.0.1](https://github.com/lstgithub578/bole-component/compare/v1.0.0...v1.0.1) (2024-08-07)
+
+
+### 🐛 Bug Fixes
+
+* **form:** 修改form表单cascader的ts类型 ([31b4717](https://github.com/lstgithub578/bole-component/commit/31b471743b85415581a56b31663e5c80b5486fc3))
+
+
+
+# [1.0.0](https://github.com/lstgithub578/bole-component/compare/c657ec9c5609d938a0f8934f3c1e494921f7adf8...v1.0.0) (2024-08-06)
 
 
 ### ✨ Features
