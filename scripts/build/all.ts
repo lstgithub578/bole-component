@@ -4,7 +4,7 @@ import { boleComponentRoot, buildOutput } from '../paths'
 
 // 插件
 import vuePlugin from '@vitejs/plugin-vue'
-import esbuild, { minify } from 'rollup-plugin-esbuild'
+import esbuild from 'rollup-plugin-esbuild'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import autoprefixer from 'autoprefixer'

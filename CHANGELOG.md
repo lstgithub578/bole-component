@@ -1,4 +1,13 @@
-# [](https://github.com/lstgithub578/bole-component/compare/v1.0.1...v) (2024-08-09)
+# [](https://github.com/lstgithub578/bole-component/compare/v1.0.2...v) (2024-12-24)
+
+
+
+## [1.0.2](https://github.com/lstgithub578/bole-component/compare/v1.0.1...v1.0.2) (2024-12-24)
+
+
+### ✨ Features
+
+* 扩张组件支持使用VNode ([71ca7a8](https://github.com/lstgithub578/bole-component/commit/71ca7a88e8d980092efb7a146e45f0e365e92c35))
 
 
 
