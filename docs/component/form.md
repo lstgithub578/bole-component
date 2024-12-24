@@ -59,7 +59,9 @@ form/component-slot
 
 ## 扩展组件
 
-自定义表单组件，只需要组件上实现 `v-model` 双向绑定，即可与表单一起使用。下面是一个很简单的选择图标的扩展组件的例子，你必须全局注册或局部注册该组件；表单给组件传入了[`formExpose`](#form-expose)上所有API和绑定了[`FromComponentOption`](#formcomponentoption)的`props`和`event`
+自定义表单组件，只需要组件上实现 `v-model` 双向绑定，即可与表单一起使用。下面是一个很简单的选择图标的扩展组件的例子，你必须**全局注册**或在[**`表单全局配置中`**](./form-global-setting.md#全局配置)局部注册该组件；表单给组件传入了[`formExpose`](#form-expose)上所有API和绑定了[`FromComponentOption`](#formcomponentoption)的`props`和`event`
+
+`v1.0.2后`, 也可以传入VNode或者返回VNode的方法
 
 ::: details 自定义选择图标组件代码
 
@@ -221,13 +223,22 @@ formOptions分为`FormObjectOptions`和`FormObjectOptions`，都是由 `FormComp
 | -------- | -------------------- | --------- | -------- | ------- |
 | `button` | 选项是否为button类型 | `boolean` | 否       | `false` |
 
-`checkbox`组件特有的API
+`checkbox`多选框组件特有的API
 
 #### CheckboxOption
 
 | 名称     | 说明                 | 类型      | 是否必须 | 默认值  |
 | -------- | -------------------- | --------- | -------- | ------- |
 | `button` | 选项是否为button类型 | `boolean` | 否       | `false` |
+
+
+`extend`扩展组件特有的API
+
+#### ExtendOption
+
+| 名称     | 说明                 | 类型      | 是否必须 | 默认值  |
+| -------- | -------------------- | --------- | -------- | ------- |
+| `component` | 组件 | `string` <br/> `VNode` `v1.0.2新增` <br/>  `(formInstance: FormInstance) => VNode \| null` `v1.0.2新增`| 否       | `false` |
 
 ## Form Expose
 

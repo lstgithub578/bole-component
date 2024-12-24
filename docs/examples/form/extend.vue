@@ -6,9 +6,10 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="tsx">
 import { ref } from 'vue'
 import { type FormObjectOptions, type FormInstance } from 'bole-component'
+import { ElInput } from 'element-plus'
 
 defineOptions({
   name: 'FormExtend'
@@ -16,7 +17,7 @@ defineOptions({
 
 const options: FormObjectOptions = {
   icon: {
-    label: '扩展组件',
+    label: '注册的扩展组件',
     type: 'extend',
     component: 'icon-select',
     event() {
@@ -25,6 +26,21 @@ const options: FormObjectOptions = {
           console.log('val', val)
         }
       }
+    }
+  },
+  jsx: {
+    label: '扩张组件(jsx)',
+    type: 'extend',
+    component: (formInstance) => {
+      return <ElInput placeholder="使用jsx"></ElInput>
+    }
+  },
+  component: {
+    label: '直接使用组件',
+    type: 'extend',
+    component: <ElInput></ElInput>,
+    props: {
+      placeholder: '直接使用组件'
     }
   }
 }

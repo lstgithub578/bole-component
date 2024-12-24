@@ -1,6 +1,6 @@
 import { ColProps, type FormProps } from 'element-plus'
 import { isFunction, isString, mergeObj } from '@bole-component/utils'
-import { FormInstance, FormComponentOption, FormArrayOption, CustomOption } from './form'
+import { FormInstance, FormComponentOption, FormArrayOption, ExtendOption } from './form'
 
 export interface FormConfig {
   formProps?: Partial<FormProps>
@@ -80,20 +80,27 @@ export function asyncDataParser(func: Function, formInstance: FormInstance, ...a
   return formConfig.asyncDataParser(func, formInstance, args)
 }
 
-// 获取组件原生element-plus props
+// 获取组件的 props
 export function getComponentProps(componentOption: FormArrayOption, instance: FormInstance) {
   const { type, props } = componentOption
 
-  const defaultProps =
-    formConfig.componentProps[
-      type === 'extend' ? (componentOption as CustomOption).component : type
-    ] || {}
+  const defaultComponentProps = getFormConfig('componentProps')
+
+  let defaultProps
+
+  if (type === 'extend' && isString(componentOption?.component)) {
+    defaultProps = defaultComponentProps[(componentOption as ExtendOption).component as string] || {}
+  } else {
+    defaultProps = defaultComponentProps[type] || {}
+  }
+
+  const placeholder =  getComponentPlaceholder(componentOption)
+  if(placeholder) defaultProps.placeholder = placeholder
 
   const componentProps = isFunction(props) ? props(instance) : props
   return Object.assign(
     {},
     defaultProps,
-    { placeholder: getComponentPlaceholder(componentOption) },
     componentProps
   )
 }
@@ -122,6 +129,16 @@ export function getComponentEvent(option: FormArrayOption, instance: FormInstanc
 export function getComponentSlots(option: FormArrayOption, instance: FormInstance) {
   return isFunction(option.slots) ? option.slots(instance) : {}
 }
+
+// 获取扩展组件
+export function getExtendComponent(component: ExtendOption['component'], instance: FormInstance) {
+  if (isFunction(component)) {
+    return component(instance)
+  } else {
+    return component
+  }
+}
+
 
 // 判断组件是否显示
 export function getComponentIsShow(

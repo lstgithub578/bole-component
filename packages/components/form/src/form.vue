@@ -18,7 +18,7 @@ import { isString, isObject, isArray, isFunction } from '@bole-component/utils'
 import type { FormComponentOption } from './form'
 import { formProps } from './form'
 import {
-  getFormConfig,
+  getExtendComponent,
   getFormProps,
   getComponentIsShow,
   getComponentProps,
@@ -207,8 +207,8 @@ function getFormItemLabel(item: FormComponentOption) {
               />
               <component
                 v-else-if="item.type === 'extend'"
-                :is="getFormConfig('components')[item.component] || item.component"
-                v-bind="{ ...formExpose, ...getComponentProps(item, formExpose) }"
+                :is="getExtendComponent(item.component, formExpose)"
+                v-bind="getComponentProps(item, formExpose)"
                 v-on="getComponentEvent(item, formExpose)"
                 v-model="state.formData[item.key]"
               >
