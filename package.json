@@ -15,7 +15,7 @@
     "stub:build": "pnpm run -C scripts/build stub",
     "build": "pnpm -C scripts/build build",
     "docs:build": "pnpm run -C docs build",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix --ignore-pattern docs/examples/",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 -n ./scripts/changelog.cjs",
     "postinstall": "pnpm stub:build",
     "prepare": "husky",

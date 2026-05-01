@@ -16,8 +16,7 @@ import {
   CheckboxGroupProps,
   RadioGroupProps,
   SwitchProps,
-  type FormRules,
-  CascaderConfig
+  type FormRules
 } from 'element-plus'
 import { VNode, PropType, ExtractPropTypes, CSSProperties, MaybeRef } from 'vue'
 
@@ -129,9 +128,9 @@ export interface CascaderOption extends FormNotDataComponentOption {
 }
 
 // 自定义组件配置
-export interface CustomOption extends FormComponentOption {
+export interface ExtendOption extends FormComponentOption {
   type: 'extend'
-  component: string
+  component: string | VNode | ((formInstance: FormInstance) => VNode | null)
 }
 
 // 插槽组件配置
@@ -149,7 +148,7 @@ export type FormObjectOption =
   | Omit<CascaderOption, 'key'>
   | Omit<DateOption, 'key'>
   | Omit<SlotOption, 'key'>
-  | Omit<CustomOption, 'key'>
+  | Omit<ExtendOption, 'key'>
 
 export type FormObjectOptions = {
   [key: string]: FormObjectOption
@@ -165,7 +164,7 @@ export type FormArrayOption =
   | CascaderOption
   | DateOption
   | SlotOption
-  | CustomOption
+  | ExtendOption
 
 export type FormArrayOptions = Array<FormArrayOption>
 
