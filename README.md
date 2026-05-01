@@ -7,6 +7,12 @@
 
 element-plus增强组件
 
+## 项目迁移说明
+
+本项目已迁移至新仓库：[elplus-enhance](https://github.com/lstgithub578/elplus-enhance)。
+
+建议访问新仓库获取最新内容。
+
 ## 文档
 
 [在线文档](https://lstgithub578.github.io/bole-component/)
